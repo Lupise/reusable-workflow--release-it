@@ -89,10 +89,6 @@ name: Versioning and releasing
 
 on: [workflow_dispatch]
 
-env:
-  REGISTRY: ghcr.io
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 permissions:
   contents: write
   packages: write
