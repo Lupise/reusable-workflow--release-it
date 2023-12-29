@@ -40,5 +40,3 @@ jobs:
       - run: sudo npm install -g release-it @release-it/conventional-changelog
       - name: Release-it
         run: release-it --ci || git status
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

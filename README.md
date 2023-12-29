@@ -21,7 +21,7 @@ Create a .release-it.json file in your repository with the following content :
     "requireCommits": true
   },
   "github": {
-    "release": true
+    "release": false
   },
   "npm": {
     "publish": false
