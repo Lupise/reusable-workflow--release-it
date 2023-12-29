@@ -1,5 +1,13 @@
 # Reusable Workflows - Release-it
 
+## [1.0.2](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.1...v1.0.2) (2023-12-29)
+
+
+### Bug Fixes
+
+* add a major tag only ([01d7715](https://github.com/Lupise/reusable-workflow--release-it/commit/01d771551cb81f61d2fa70b258ae59ac83757948))
+* trying to make GitHub release works ([b295569](https://github.com/Lupise/reusable-workflow--release-it/commit/b2955693ac750b57aea2517c241ba4df24a4ab84))
+
 ## [1.0.1](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.0...v1.0.1) (2023-12-29)
 
 
