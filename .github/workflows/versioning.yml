@@ -38,6 +38,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.RELEASE_IT_SSH_PRIVATE_KEY }}
       - run: sudo npm install -g release-it @release-it/conventional-changelog
-      - run: release-it --ci || git status
+      - name: Release-it
+        run: release-it --ci || git status
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
