@@ -7,7 +7,7 @@
     "tagName": "v${version}"
   },
   "github": {
-    "release": false
+    "release": true
   },
   "npm": {
     "publish": false
@@ -15,7 +15,7 @@
   "plugins": {
     "@release-it/conventional-changelog": {
       "infile": "CHANGELOG.md",
-      "header": "# Reusable Workflows",
+      "header": "# Reusable Workflows - Release-it",
       "preset": {
         "name": "conventionalcommits",
         "types": [
