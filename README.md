@@ -90,7 +90,6 @@ on: [workflow_dispatch]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
@@ -99,7 +98,7 @@ permissions:
 
 jobs:
   manual-release:
-    uses: Lupise/reusable-workflows/.github/workflows/versioning.yml@v2
+    uses: Lupise/reusable-workflows--release-it/.github/workflows/versioning.yml@v1
     secrets: inherit
 
 ```
