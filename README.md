@@ -81,7 +81,7 @@ Create a .release-it.json file in your repository with the following content :
 
 ```
 
-Create a file called `.github/workflows/manual-versioning.yml` in your repository with the following content: 
+Create a file called `.github/workflows/versioning.yml` in your repository with the following content: 
 
 ```yaml
 name: Versioning and releasing
@@ -98,7 +98,7 @@ permissions:
 
 jobs:
   manual-release:
-    uses: Lupise/reusable-workflows--release-it/.github/workflows/versioning.yml@v1
+    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v1
     secrets: inherit
 
 ```
