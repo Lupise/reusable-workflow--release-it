@@ -102,7 +102,7 @@ jobs:
     secrets: inherit
 ```
 
-If you need release-it bumper plugin, your workflow should be the following:
+If you need [release-it bumper plugin](https://github.com/release-it/bumper), your workflow should be the following:
 
 ```yaml
 name: Versioning and releasing
