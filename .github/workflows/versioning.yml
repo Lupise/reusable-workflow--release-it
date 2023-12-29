@@ -5,7 +5,19 @@ on:
     secrets:
       RELEASE_IT_SSH_PRIVATE_KEY:
         required: true
+    inputs:
+      BUMPER:
+        description: "set to true if release-it bumper plugin is needed, false otherwise."
+        type: boolean
+        default: false
   workflow_dispatch:
+    inputs:
+      BUMPER:
+        required: true
+        description: "set to true if release-it bumper plugin is needed, false otherwise."
+        type: boolean
+        default: false
+
 
 env:
   REGISTRY: ghcr.io
@@ -38,5 +50,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.RELEASE_IT_SSH_PRIVATE_KEY }}
       - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper
+      - if: ${{ inputs.BUMPER }} == true
+        run: sudo npm install -g @release-it/bumper
       - name: Release-it
         run: release-it --ci || git status

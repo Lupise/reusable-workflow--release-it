@@ -100,7 +100,29 @@ jobs:
   manual-release:
     uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v1
     secrets: inherit
+```
 
+If you need release-it bumper plugin, your workflow should be the following:
+
+```yaml
+name: Versioning and releasing
+
+on: [workflow_dispatch]
+
+env:
+  REGISTRY: ghcr.io
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  manual-release:
+    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v1
+    secrets: inherit
+    with:
+      BUMPER: true
 ```
 
 Commit and push all your new files
