@@ -5,7 +5,7 @@
     "requireUpstream": false,
     "requireCommits": true,
     "tagName": "v${version}",
-    "tagExclude": "v[0-9]+"
+    "tagExclude": "v?"
   },
   "github": {
     "release": false

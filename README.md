@@ -19,7 +19,7 @@ Create a .release-it.json file in your repository with the following content :
     "requireBranch": "main",
     "requireUpstream": false,
     "requireCommits": true,
-    "tagMatch": "[0-9]+\\.[0-9]+\\.[0-9]+"
+    "tagExclude": "?"
   },
   "github": {
     "release": false
