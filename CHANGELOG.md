@@ -1,5 +1,12 @@
 # Reusable Workflows - Release-it
 
+## [1.0.1](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.0...v1.0.1) (2023-12-29)
+
+
+### Miscellaneous
+
+* fixing readme ([86da08c](https://github.com/Lupise/reusable-workflow--release-it/commit/86da08c4951fbc505dcafe8859011b83aa5e0442))
+
 ## [1.0.0](https://github.com/Lupise/reusable-workflow--release-it/compare/v0.0.2...v1.0.0) (2023-12-29)
 
 
