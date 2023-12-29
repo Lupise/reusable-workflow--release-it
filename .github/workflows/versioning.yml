@@ -15,7 +15,7 @@ jobs:
   manual-release-it:
     runs-on: ubuntu-latest
     environment:
-      name: prod
+      name: release-it
 
     steps:
       - name: Checkout repository
