@@ -1,5 +1,14 @@
 # Reusable Workflows - Release-it
 
+## [0.0.2](https://github.com/Lupise/reusable-workflow--release-it/compare/v0.0.1...v0.0.2) (2023-12-29)
+
+
+### Miscellaneous
+
+* fix version evaluation ([8cbfba5](https://github.com/Lupise/reusable-workflow--release-it/commit/8cbfba59a926cbca899aa2a67ac9d7909266ffd0))
+* fix version evaluation ([8bf0596](https://github.com/Lupise/reusable-workflow--release-it/commit/8bf0596d19b1cad2e4c20207122a87ef66259e75))
+* removing bumper specific install ([156ee88](https://github.com/Lupise/reusable-workflow--release-it/commit/156ee88be27389762dc5bcbc65865a60cd73437f))
+
 ## [0.0.1](https://github.com/Lupise/reusable-workflow--release-it/compare/v0.1.0...v0.0.1) (2023-12-29)
 
 ## [0.1.0](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.2...v0.1.0) (2023-12-29)
