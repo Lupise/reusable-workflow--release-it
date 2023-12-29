@@ -4,7 +4,8 @@
     "requireBranch": "main",
     "requireUpstream": false,
     "requireCommits": true,
-    "tagName": "v${version}"
+    "tagName": "v${version}",
+    "tagMatch": "v[0-9]+\\.[0-9]+\\.[0-9]+"
   },
   "github": {
     "release": false

@@ -18,7 +18,8 @@ Create a .release-it.json file in your repository with the following content :
     "commitMessage": "Release ${version}",
     "requireBranch": "main",
     "requireUpstream": false,
-    "requireCommits": true
+    "requireCommits": true,
+    "tagMatch": "[0-9]+\\.[0-9]+\\.[0-9]+"
   },
   "github": {
     "release": false
