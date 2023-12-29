@@ -49,7 +49,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.RELEASE_IT_SSH_PRIVATE_KEY }}
-      - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper
+      - run: sudo npm install -g release-it @release-it/conventional-changelog
       - if: ${{ inputs.BUMPER == true }}
         run: sudo npm install -g @release-it/bumper
       - name: Release-it
