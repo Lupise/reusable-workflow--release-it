@@ -29,7 +29,6 @@ Create a .release-it.json file in your repository with the following content :
   },
   "plugins": {
     "@release-it/conventional-changelog": {
-      "infile": "CHANGELOG.md",
       "header": "# REPOSITORY_NAME",
       "preset": {
         "name": "conventionalcommits",
