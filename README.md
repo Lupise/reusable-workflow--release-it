@@ -22,7 +22,7 @@ Create a .release-it.json file in your repository with the following content :
     "tagExclude": "?"
   },
   "github": {
-    "release": false
+    "release": true
   },
   "npm": {
     "publish": false
