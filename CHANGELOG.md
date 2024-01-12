@@ -1,5 +1,12 @@
 # Reusable Workflows - Release-it
 
+## [1.0.3](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.2...v1.0.3) (2024-01-12)
+
+
+### Miscellaneous
+
+* **deps:** bump the production-dependencies group with 3 updates ([d9ee9ae](https://github.com/Lupise/reusable-workflow--release-it/commit/d9ee9ae528af97f406f4868521d04fc96a05e625))
+
 ## [1.0.2](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.1...v1.0.2) (2024-01-12)
 
 
