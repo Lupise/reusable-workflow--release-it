@@ -2,9 +2,6 @@ name: Versioning and releasing
 
 on:
   workflow_call:
-    secrets:
-      RELEASE_IT_SSH_PRIVATE_KEY:
-        required: true
   workflow_dispatch:
   push:
     branches:
