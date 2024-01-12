@@ -1,5 +1,12 @@
 # Reusable Workflows - Release-it
 
+## [1.0.2](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.1...v1.0.2) (2024-01-12)
+
+
+### Miscellaneous
+
+* adding dependabot configuration ([ec54bb1](https://github.com/Lupise/reusable-workflow--release-it/commit/ec54bb14eb598847ef7d07968d639cad1ac14aab))
+
 ## [1.0.1](https://github.com/Lupise/reusable-workflow--release-it/compare/v1.0.0...v1.0.1) (2023-12-29)
 
 
