@@ -4,9 +4,9 @@
 
 Manually callable workflow that try to create a release of the code:
 - create a new version number from conventional commit compliant commits,
-- Update changelog accordingly,
 - create a git tag with the version,
-- commit and push all this.
+- create a GitHub release,
+- move the major tag to the last version
 
 ## How to use it
 
@@ -92,7 +92,7 @@ permissions:
   contents: write
 
 jobs:
-  manual-release:
+  release:
     uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v3
     secrets: inherit
 ```

@@ -38,3 +38,5 @@ jobs:
         run: release-it -VV --ci || git status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: lupise/major-tagging-action@v0
