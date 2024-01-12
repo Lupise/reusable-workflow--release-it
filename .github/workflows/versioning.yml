@@ -10,13 +10,10 @@ on:
     branches:
       - main
 
-
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   release-it:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     environment:
       name: release-it
@@ -36,11 +33,8 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote rm origin
-          git remote add origin git@github.com:${{ github.repository }}.git
-      - uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.RELEASE_IT_SSH_PRIVATE_KEY }}
       - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper
       - name: Release-it
-        run: release-it --ci || git status
+        run: release-it -VV --ci || git status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
