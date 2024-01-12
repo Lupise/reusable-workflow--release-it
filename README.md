@@ -93,7 +93,7 @@ permissions:
 
 jobs:
   manual-release:
-    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v1
+    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v3
     secrets: inherit
 ```
 
