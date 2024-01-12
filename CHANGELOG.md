@@ -1,5 +1,12 @@
 # Reusable Workflows - Release-it
 
+## [1.0.5](https://github.com/Lupise/reusable-workflow--release-it-test/compare/v1.0.4...v1.0.5) (2024-01-12)
+
+
+### Miscellaneous
+
+* testing github release generation ([dc37b2b](https://github.com/Lupise/reusable-workflow--release-it-test/commit/dc37b2bf2378d0f3585888d49de64901262db28a))
+
 ## [1.0.4](https://github.com/Lupise/reusable-workflow--release-it-test/compare/v1.0.3...v1.0.4) (2024-01-12)
 
 
