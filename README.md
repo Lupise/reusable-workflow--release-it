@@ -98,27 +98,4 @@ jobs:
     secrets: inherit
 ```
 
-Commit and push all your new files
-
-Generate an SSH key pairs:
-
-```shell
-ssh-keygen -t ed25519 -q -f ./id_rsa_my_repo -N ""  -C "git@github.com:Lupise/NAME_OF_THE_REPOSITORY.git"
-```
-
-Replace `NAME_OF_THE_REPOSITORY` with the name of the repository.
-
-Add `./id_rsa_my_repo.pub` content as deploy key of the GitHub project with write permissions
-Add `./id_rsa_my_repo` content as `RELEASE_IT_SSH_PRIVATE_KEY` in "release-it" environment secret.
-
-After this, please delete the SSH key pairs:
-
-```shell
-rm ./id_rsa_reusable_workflows*
-```
-
-Needed configuration:
-
-| Name                         | type   | Description                                                                       |
-|------------------------------|--------|-----------------------------------------------------------------------------------|
-| `RELEASE_IT_SSH_PRIVATE_KEY` | secret | SSH Private key allowed to write in the repository you want to generate releases. |
+Commit and push all your new files.
