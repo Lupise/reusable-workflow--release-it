@@ -2,7 +2,18 @@ name: Versioning and releasing
 
 on:
   workflow_call:
+    inputs:
+      move_major_tag:
+        type: boolean
+        default: false
+        required: false
   workflow_dispatch:
+    inputs:
+      move_major_tag:
+        type: boolean
+        default: false
+        description: Should the major tag be moved to the last release
+        required: false
   push:
     branches:
       - main
@@ -36,4 +47,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: lupise/major-tagging-action@v0
+      - if: '${{ github.event_name == "push" || github.event.inputs.move_major_tag == true }}'
+        uses: lupise/major-tagging-action@v0
