@@ -28,6 +28,7 @@ jobs:
   release-it:
     permissions:
       contents: write
+      actions: write
     runs-on: ubuntu-latest
     environment:
       name: release-it
@@ -69,3 +70,5 @@ jobs:
         if: inputs.TRIGGER_WORKFLOW == true
         run: |
           gh workflow run ".github/workflows/${{ inputs.NEXT_WORKFLOW_NAME }}" --ref ${{ steps.retrieve_release_version.outputs.release_version }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
