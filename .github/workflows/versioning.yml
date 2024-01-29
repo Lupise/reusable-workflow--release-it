@@ -2,10 +2,27 @@ name: Versioning and releasing
 
 on:
   workflow_call:
+    inputs:
+      TRIGGER_WORKFLOW:
+        type: boolean
+        default: false
+        required: false
+        description: Set to true if you want to trigger another workflow after this one is ended.
+      NEXT_WORKFLOW_NAME:
+        type: string
+        default: ""
+        required: false
+        description: |
+          Name of the workflow file to trigger after this workflow has been run.
+          The file need to be in .github/workflows directory.
   workflow_dispatch:
   push:
     branches:
       - main
+
+concurrency:
+  group: ${{ github.workflow }}-$${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   release-it:
@@ -31,9 +48,24 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
       - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper
+
+      - name: Retrieve next release version
+        id: retrieve_release_version
+        run: |
+          RELEASE_VERSION=$(release-it --release-version)
+          echo "RELEASE_VERSION=$RELEASE_VERSION"
+          echo "release_version=$RELEASE_VERSION" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Release-it
         run: release-it -VV --ci || git status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: lupise/major-tagging-action@v0
+
+      - name: Trigger next workflow
+        if: inputs.TRIGGER_WORKFLOW == true
+        run: |
+          gh workflow run ".github/workflows/${{ inputs.NEXT_WORKFLOW_NAME }}" --ref ${{ steps.retrieve_release_version.outputs.release_version }}
