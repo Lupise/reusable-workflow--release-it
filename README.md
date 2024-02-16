@@ -122,7 +122,6 @@ jobs:
     uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v2
     secrets: inherit
     with:
-      TRIGGER_WORKFLOW: true
       NEXT_WORKFLOW_NAME: build.yml
 ```
 
