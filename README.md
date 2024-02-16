@@ -97,4 +97,33 @@ jobs:
     secrets: inherit
 ```
 
+if you need to trigger another workflow after the release, you can use `versioning_and_build.yml` workflow, for example::
+
+```yaml
+name: Versioning and releasing
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths: [
+      'src/**',
+      'Dockerfile'
+    ]
+
+permissions:
+  contents: write
+  packages: write
+  actions: write
+
+jobs:
+  manual-release:
+    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v2
+    secrets: inherit
+    with:
+      TRIGGER_WORKFLOW: true
+      NEXT_WORKFLOW_NAME: build.yml
+```
+
 Commit and push all your new files.

@@ -2,10 +2,14 @@ name: Versioning and releasing
 
 on:
   workflow_call:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+    inputs:
+      NEXT_WORKFLOW_NAME:
+        type: string
+        default: ""
+        required: true
+        description: |
+          Name of the workflow file to trigger after this workflow has been run.
+          The file need to be in .github/workflows directory.
 
 concurrency:
   group: ${{ github.workflow }}-$${{ github.head_ref || github.run_id }}
@@ -15,6 +19,7 @@ jobs:
   release-it:
     permissions:
       contents: write
+      actions: write
     runs-on: ubuntu-latest
     environment:
       name: release-it
@@ -51,3 +56,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: lupise/major-tagging-action@v0
+
+      - name: Trigger next workflow
+        run: |
+          gh workflow run ".github/workflows/${{ inputs.NEXT_WORKFLOW_NAME }}" --ref ${{ steps.retrieve_release_version.outputs.release_version }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
