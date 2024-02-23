@@ -119,7 +119,7 @@ permissions:
 
 jobs:
   manual-release:
-    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning.yml@v2
+    uses: Lupise/reusable-workflow--release-it/.github/workflows/versioning_and_build.yml@v2
     secrets: inherit
     with:
       NEXT_WORKFLOW_NAME: build.yml
