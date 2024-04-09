@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-      - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper
+      - run: sudo npm install -g release-it @release-it/conventional-changelog @release-it/bumper @j-ulrich/release-it-regex-bumper
 
       - name: Retrieve next release version
         id: retrieve_release_version
