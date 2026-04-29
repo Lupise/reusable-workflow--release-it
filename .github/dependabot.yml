@@ -17,8 +17,6 @@ updates:
       interval: "weekly"
     registries:
       - github-lupise
-    reviewers:
-    - sebastienbaillet
     groups:
       production-dependencies:
         dependency-type: "production"
